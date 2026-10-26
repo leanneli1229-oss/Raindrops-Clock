@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <!-- 手机上：按屏幕宽度显示，不让双指缩放 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>雨水花瓶钟</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: none;          /* 点画布时页面不会滚动、不会被双击放大 */
+    }
+    /* 画布永远是正方形，按屏幕大小自动缩放：手机竖着放占满宽度，电脑上占满高度 */
+    canvas {
+      display: block;
+      width: min(100vw, 100vh) !important;
+      height: min(100vw, 100vh) !important;
+      width: min(100vw, 100dvh) !important;
+      height: min(100vw, 100dvh) !important;
+    }
+  </style>
+  <!-- p5.js 从网上的 CDN 加载，不用自己下载 -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.min.js"></script>
+</head>
+<body>
+  <script src="sketch.js"></script>
+</body>
+</html>
