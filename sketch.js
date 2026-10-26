@@ -288,15 +288,15 @@ function keyPressed() {
   }
 }
 
-// 只有在浏览器拦住了自动播放时，左上角才会显示一行小字；声音一开始就消失
+// 只有在浏览器拦住了自动播放时，顶部正中间才会显示一行小字；声音一开始就消失
 function drawSoundHint() {
   if (audioCtx && audioCtx.state === 'running') return;
   noStroke();
   fill(255, 120);
   drawingContext.fillStyle = 'rgba(255, 255, 255, 0.47)'; // p5 2.x 有时会跳过重复的 fill()，这里直接设一次
   textSize(11);
-  textAlign(LEFT, TOP);
-  text('浏览器拦住了自动播放 · 点一下开启雨声', 10, 10);
+  textAlign(CENTER, TOP);
+  text('Tap anywhere to turn on the rain sound', width / 2, 10);
 }
 
 // ---------- 花瓶形状 ----------
